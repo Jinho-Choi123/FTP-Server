@@ -2,10 +2,6 @@ from django.db import models
 import datetime 
 import uuid
 
-####Logging
-import logging
-logger = logging.getLogger(__name__)
-
 #File Group contains attr of list of File Obj
 class FileGroup(models.Model):
     gid = models.UUIDField(
@@ -14,17 +10,10 @@ class FileGroup(models.Model):
         editable = False
     )
     uploadtime = models.DateTimeField(auto_now_add = True)
-    expiredtime = models.DateTimeField(null = True)
+
+    expiredtime = models.DateTimeField(null = False, default = datetime.datetime.now() + datetime.timedelta(hours = 6))
     filenum = models.PositiveIntegerField(default = 0)
     filesize = models.PositiveBigIntegerField(default = 0)
-    def __init(self):
-        self.gid = uuid.uuid4()
-        self.uploadtime = datetime.datetime.now()
-        #after expiredtime, the file will be nonactive.
-        self.expiredtime = datetime.datetime.now() + datetime.timedelta(hours = 6)
-        #info of the numbers of files & total size of files. 
-        self.filenum = 0
-        self.filesize = 0
     def addfile(self, file):
         self.filenum = self.filenum + 1 
         file_size = file.content.size
@@ -41,9 +30,3 @@ class File(models.Model):
     )
     group = models.ForeignKey(FileGroup, related_name='filelist', on_delete=models.CASCADE, db_constraint= False, blank = True)
     content = models.FileField(max_length = 200, blank = False, null = True, upload_to = file_dir_path)
-    
-    #initialize with filename, extension and groupid
-    def __init(self, group, content):
-        self.content = content
-        self.group = group 
-        #store path is <basepath>/gid/uid  저장 이름은 uid. 실제 이름은 filename.

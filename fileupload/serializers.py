@@ -20,4 +20,4 @@ class FileSerializer(serializers.Serializer):
 class FileGroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = FileGroup
-        fields = ['gid', 'expiredtime', 'filenum']
+        fields = ['gid', 'uploadtime', 'expiredtime', 'filenum', 'filesize']
