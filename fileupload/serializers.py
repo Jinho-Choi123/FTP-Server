@@ -18,7 +18,6 @@ class FileSerializer(serializers.Serializer):
 
 
 class FileGroupSerializer(serializers.ModelSerializer):
-    filelist = FileSerializer(read_only = True, many = True)
     class Meta:
         model = FileGroup
         fields = ['gid', 'expiredtime', 'filenum']

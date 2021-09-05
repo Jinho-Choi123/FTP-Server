@@ -1,0 +1,22 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "ftpserver",
+            "database": "${workspaceFolder:ftp_server}/db.sqlite3"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "ftp-server",
+            "database": "C:\\Users\\choij\\workspace\\ftp-server\\db.sqlite3"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "ftp-server",
+            "database": "C:\\Users\\choij\\workspace\\ftp-server\\db.sqlite3"
+        }
+    ]
+}

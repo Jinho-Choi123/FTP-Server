@@ -32,11 +32,11 @@ class File(models.Model):
         default = uuid.uuid4,
         editable = False
     )
-    group = models.ForeignKey(FileGroup, on_delete=models.CASCADE)
+    group = models.ForeignKey(FileGroup, related_name='filelist', on_delete=models.CASCADE, db_constraint= False, blank = True)
     content = models.FileField(max_length = 40, blank = False, null = True)
 
     #initialize with filename, extension and groupid
-    def __init(self, gid, content):
-        self.gid = gid
+    def __init(self, group, content):
         self.content = content
+        self.group = group 
         #store path is <basepath>/gid/uid  저장 이름은 uid. 실제 이름은 filename.
