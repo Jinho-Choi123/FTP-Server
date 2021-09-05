@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 from checkserver.views import Monitor
+from fileupload.views import FileUpload
 
 urlpatterns = [
     path('checkserver/', Monitor.as_view(), name="checkserver"),
+    path('fileupload/', FileUpload.as_view(), name="fileupload")
 ]

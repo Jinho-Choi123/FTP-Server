@@ -2,25 +2,6 @@ from django.db import models
 import datetime 
 import uuid
 
-# Create your models here.
-class File(models.Model):
-    uid = models.UUIDField(
-        primary_key=True,
-        default = uuid.uuid4,
-        editable = False
-    )
-    gid = models.UUIDField(
-        primary_key = False,
-        editable = False,
-        null = True
-    )
-    content = models.FileField(max_length = 40, blank = False, null = True, upload_to = gid)
-
-    #initialize with filename, extension and groupid
-    def __init(self, gid):
-        self.gid = gid
-        #store path is <basepath>/gid/uid  저장 이름은 uid. 실제 이름은 filename.
-
 #File Group contains attr of list of File Obj
 class FileGroup(models.Model):
     gid = models.UUIDField(
@@ -31,9 +12,7 @@ class FileGroup(models.Model):
     uploadtime = models.DateTimeField(auto_now_add = True)
     expiredtime = models.DateTimeField(null = True)
     filenum = models.PositiveIntegerField(default = 0)
-    filesize = models.PositiveIntegerField(default = 0)
-    filelist = models.ManyToManyField(File)
-
+    filesize = models.PositiveBigIntegerField(default = 0)
     def __init(self):
         self.gid = uuid.uuid4()
         #after expiredtime, the file will be nonactive.
@@ -41,4 +20,23 @@ class FileGroup(models.Model):
         #info of the numbers of files & total size of files. 
         self.filenum = 0
         self.filesize = 0
+    def addfile(self, file):
+        self.filenum = self.filenum + 1 
+        file_size = file.content.size
+        self.filesize = self.filesize + file_size
 
+
+class File(models.Model):
+    uid = models.UUIDField(
+        primary_key=True,
+        default = uuid.uuid4,
+        editable = False
+    )
+    group = models.ForeignKey(FileGroup, on_delete=models.CASCADE)
+    content = models.FileField(max_length = 40, blank = False, null = True)
+
+    #initialize with filename, extension and groupid
+    def __init(self, gid, content):
+        self.gid = gid
+        self.content = content
+        #store path is <basepath>/gid/uid  저장 이름은 uid. 실제 이름은 filename.
