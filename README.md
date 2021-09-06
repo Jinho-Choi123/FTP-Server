@@ -107,7 +107,7 @@ FTP-Server
 │   ├── asgi.py
 │   ├── urls.py - Contains Routing info
 │   └── wsgi.py
-│
+├── ResetMigration.sh - reset db and migrations. run the server
 ├── .gitignore
 └── manage.py  - Entry point
 ```
