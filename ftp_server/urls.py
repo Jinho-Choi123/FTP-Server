@@ -18,10 +18,11 @@ from django.urls import path
 
 from checkserver.views import Monitor
 from fileupload.views import FileUpload
-from filedownload.views import FileDownload
+from filedownload.views import FileDownloadList, FileDownload
 
 urlpatterns = [
     path('checkserver/', Monitor.as_view(), name="checkserver"),
     path('fileupload/', FileUpload.as_view(), name="fileupload"),
-    path('filedownload/', FileDownload.as_view(), name = "filedownload"),
+    path('filedownload/list/', FileDownloadList.as_view(), name = "filedownloadlist"),
+    path('filedownload/', FileDownload.as_view(), name='filedownload'),
 ]
