@@ -21,12 +21,12 @@
 
 # About
 
-FTP Server helps **Users who needs to transfer large amount of data** without using physical drive or wired connection. While this service is open for public, **anyone who wants to transfer files** are able to upload and download files. Please feel free to use our service.
+FTP Server helps **User who needs to transfer large amount of data** without using physical drive or wired connection. While this service is open for public, **anyone who wants to transfer files** is able to upload and download. Please feel free to use our service.
 
 
 This Project is being maintained by [Ball](https://github.com/Jinho-Choi123)
 
-We're expecting our users transfer their Large size videos or images. There is no strict restrictions on contents that users upload.
+We're expecting our users to transfer their Large size videos or images. There is no strict restrictions on contents that users upload.
 
 Please contact us to get more detailed information.
 
@@ -52,14 +52,14 @@ If you're looking for frontend codes, you can find it in [here](https://github.c
 
 ## Prerequisites
 
-**You’ll need to have Python 3.9.7 or local development and production machine**. You can use [docker](https://www.docker.com/) to easily switch Python versions between different projects.
+**You’ll need to have Python 3.9.7 and local development and production machine**. You can use [docker](https://www.docker.com/) to easily set dev environment.
 Python. That's all you need.
 
 ```sh
 $ python --version // 3.9.7
 ```
 ### sqlite3
-For simple dev setup, we will use sqlite3 database. In official use, please [use other database](https://docs.djangoproject.com/en/3.2/topics/db/multi-db/) like [MongoDB](https://www.mongodb.com/), [MYSQL](https://www.mysql.com/), [Postgresql](https://www.postgresql.org/). 
+For simple dev setup, we will use sqlite3 database. In official use, please [use other database](https://docs.djangoproject.com/en/3.2/topics/db/multi-db/) like [MongoDB](https://www.mongodb.com/), [MySQL](https://www.mysql.com/) or [Postgresql](https://www.postgresql.org/). 
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ Since our default database is sqlite3, you don't need to install or start a data
 
 ### pip
 
-Run django-rest-framework dev server
+Run dev server
 
 ```sh
 $ pip install -r requirements.txt //Installing dependencies with pip
