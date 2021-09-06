@@ -94,42 +94,24 @@ For unsophisticated use of service, we don't have any authentication system. How
 
 ## Folder Structure
 ```
-zabo-front
+FTP-Server
 ├── README.md
 ├── LICENSE
-├── deploy
-├── public
-├── node_modules
-├── package.json
+├── checkserver
+├── filedownload
+├── fileupload
+├── ftp_server
+│   ├── _pycach_
+│   ├── __init__.py
+│   ├── setting.py - Contains Project Settings
+│   ├── asgi.py
+│   ├── urls.py - Contains Routing info
+│   └── wsgi.py
+│
 ├── .gitignore
-├── tools
-│   ├── generate-component.py
-│   └── moveBuildFolder.sh
-├── src
-│   ├── index.js - Entry point
-│   ├── App.js
-│   ├── boot.js - Ran before rendering app
-│   │
-│   ├── components - All React Components
-│   │   ├── container
-│   │   ├── atoms
-│   │   ├── molecules
-│   │   ├── organisms
-│   │   ├── templates
-│   │   └── pages - Please refer to atomic web design (http://bradfrost.com/blog/post/atomic-web-design/)
-│   │
-│   ├── lib - Libraries and utility functions
-│   ├── hoc - Higher order components (https://reactjs.org/docs/higher-order-components.html)
-│   ├── locales - Translation files /en, /kr
-│   ├── static - Static files such as images
-│   └── store - Redux files
-└── index.js  - Entry point
+└── manage.py  - Entry point
 ```
 
-## Deployment
-
-First, build static files with webpack regarding to [Get Ready for Production](#get-ready-for-production)
-And then follow [zabo-server-nodejs deployment guide-line](https://github.com/sparcs-kaist/zabo-server-nodejs/tree/develop#running-production-server)
 
 ## Contributing
 
@@ -138,24 +120,9 @@ Please checkout [CONTRIBUTING.md](CONTRIBUTING.md) for more.
 
 ## Authors
 
-* **Cookie** - [Cookie](https://github.com/jungdj)
-* **Youns** - [Youns](https://github.com/Choiyounseo)
-* **Hubo** - [bhanghj3094](https://github.com/bhanghj3094)
-* **Hou** - [Sanghou](https://github.com/Sanghou)
-* **Parang** - [pa-rang](https://github.com/pa-rang)
-* **Paco** - [pacokwon](https://github.com/pacokwon)
-* **Sniperj** - [sni-j](https://github.com/sni-J)
-* **LuLu-jun** - [lulu-jun](https://github.com/LuLu-jun)
+* **Ball** - [Cookie](https://github.com/Jinho-Choi123)
 
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsparcs-kaist%2Fzabo-front-reactjs.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsparcs-kaist%2Fzabo-front-reactjs?ref=badge_large)
-
-## Acknowledgments
-
-We're renewing following projects.
-
-[Zabo-WEB](https://github.com/sparcs-kaist/zabo-web) and [Zabo-API](https://github.com/sparcs-kaist/zabo-api)
