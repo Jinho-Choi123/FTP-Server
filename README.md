@@ -68,7 +68,7 @@ For simple dev setup, we will use sqlite3 database. In official use, please [use
 Since our default database is sqlite3, you don't need to install or start a database.
 ```
 
-#### pip
+### pip
 
 Run django-rest-framework dev server
 
