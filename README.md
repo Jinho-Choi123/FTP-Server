@@ -64,6 +64,9 @@ For simple dev setup, we will use sqlite3 database. In official use, please [use
 ## Getting Started
 
 ### Running Development Server
+```
+Since our default database is sqlite3, you don't need to install or start a database.
+```
 
 #### pip
 
@@ -71,7 +74,7 @@ Run django-rest-framework dev server
 
 ```sh
 $ pip install -r requirements.txt //Installing dependencies with pip
-$ python manage.py makemigrations //migration is required to run server
+$ python manage.py makemigrations //migration is required
 $ python manage.py migrate 
 $ python manage.py runserver
 // Follow the instructions on terminal
@@ -83,19 +86,17 @@ Using http-proxy-middleware, all requests are proxied to localhost:8000 on which
 
 ## Authentication
 
-For unsophisticated use of service, we don't have any authentication system. 
+For unsophisticated use of service, we don't have any authentication system. However, to secure user's file, [only allow request from frontend server's ip address](https://www.django-rest-framework.org/api-guide/permissions/).
 
 ## Built with
 
-* [Atomic Web Design](http://bradfrost.com/blog/post/atomic-web-design/)
-* [Create React App](https://create-react-app.dev/) - Easy set up for react project
-* [Redux](https://redux.js.org/) - In-memory data structure store.
+* [UUID](https://docs.python.org/3/library/uuid.html)
 
 ## Folder Structure
 ```
 zabo-front
 ├── README.md
-├── LICENSE.md
+├── LICENSE
 ├── deploy
 ├── public
 ├── node_modules
