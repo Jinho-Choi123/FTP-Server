@@ -44,15 +44,13 @@ If you're looking for frontend codes, you can find it in [here](https://github.c
 - [Authentication](#authentication)
 - [Built With](#built-with)
 - [Folder Structure](#folder-structure)
-- [Deployment](#deployment)
 - [Authors](#authors)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 ## Prerequisites
 
-**You’ll need to have Python 3.9.7 and local development and production machine**. You can use [docker](https://www.docker.com/) to easily set dev environment.
+**You’ll need to have Python 3.9.7 on local development or production machine**. You can use [docker](https://www.docker.com/) to easily set dev environment.
 Python. That's all you need.
 
 ```sh
